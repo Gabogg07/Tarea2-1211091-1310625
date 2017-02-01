@@ -4,7 +4,7 @@ Created on Feb 1, 2017
 @author: gabriel
 '''
 
-class Usuario(object):
+class BilleteraElectronica(object):
 
 
     def __init__(self, nombre,apellido,ci,pin,id):
