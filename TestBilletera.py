@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
         self.assertEqual(self.persona.id, 987654321, "Error en el identificador")
     
     def testSaldo(self):
-        self.assertEqual(self.persona.saldo, 0, "Error al ver el saldo disponible")
+        self.assertEqual(self.persona.saldo(), 0, "Error al ver el saldo disponible")
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']

@@ -22,4 +22,4 @@ class BilleteraElectronica(object):
         self.saldoTotal = 0
         
     def saldo(self):
-        pass
+        return self.saldoTotal
