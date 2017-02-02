@@ -27,7 +27,13 @@ class Test(unittest.TestCase):
     def testRecargar(self):
         recargar=Registro(1000,datetime.date.today(),150)
         self.persona.recargar(recargar)
-        self.assertEqual(self.persona.regRecarga[-1], recargar,"ERROR EN LA RECARGA")
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"Error en la recarga")
+        
+    def testConsumir(self):
+        consumo = Registro(2000, datetime.date.today(), 200)
+        self.persona.consumir(consumo)
+        self.assertEqual(self.persona.regConsumo[-1], consumo, "Error en el consumo")
+        
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
