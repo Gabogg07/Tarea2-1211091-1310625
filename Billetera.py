@@ -29,8 +29,7 @@ class BilleteraElectronica:
     def saldo(self):
         return self.saldoTotal
     
-    def recargar(self, monto, fecha, idEstablecimiento):
-        registro = Registro(monto, fecha, idEstablecimiento)
+    def recargar(self, registro):
         self.regRecarga.append(registro)
-        self.saldoTotal+= registro.devMonto()
-        print(self.regRecarga[-1].fecha)
+        self.saldoTotal+= registro.monto
+

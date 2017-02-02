@@ -25,10 +25,9 @@ class Test(unittest.TestCase):
         self.assertEqual(self.persona.saldo(), 0, "Error al ver el saldo disponible")
         
     def testRecargar(self):
-        self.persona.recargar(1000, datetime.date.today(),150)
-        self.assertEqual(self.persona.regRecarga[-1].monto, 1000, "Error en el monto de recarga.")
-        self.assertEqual(self.persona.regRecarga[-1].fecha,datetime.date.today(), "Error en la fecha de recarga.")
-        self.assertEqual(self.persona.regRecarga[-1].idEstablecimiento, 150, "Error en el id de recarga.")
+        recargar=Registro(1000,datetime.date.today(),150)
+        self.persona.recargar(recargar)
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"ERROR EN LA RECARGA")
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
