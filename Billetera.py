@@ -23,3 +23,6 @@ class BilleteraElectronica(object):
         
     def saldo(self):
         return self.saldoTotal
+    
+    def recargar(self,Registro):
+        pass
