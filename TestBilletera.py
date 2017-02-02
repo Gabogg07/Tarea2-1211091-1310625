@@ -6,6 +6,7 @@ Created on Feb 1, 2017
 '''
 import unittest
 import datetime
+import math
 from Billetera import *
 
 
@@ -37,8 +38,39 @@ class Test(unittest.TestCase):
         consumo = Registro(20, datetime.date.today(), 200)
         self.persona.consumir(consumo, 192)
         self.assertEqual(self.persona.regConsumo[-1], consumo, "Error en el consumo")
+    
+    def testFrontera1Recargar(self):
+        recargar=Registro(0,datetime.date.today(),150)
+        self.persona.recargar(recargar)
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"Error en la recarga")
+    
+    def testFrontera2Recargar(self):
+        num= float("inf")
+        recargar=Registro(num,datetime.date.today(),150)
+        self.persona.recargar(recargar)
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"Error en la recarga")
+    
+    def testEsquina1Recargar(self):
+        recargar=Registro(0.1,datetime.date.today(),150)
+        self.persona.recargar(recargar)
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"Error en la recarga")
+    
+    def testEsquina2Recargar(self):
+        num= float("inf")
+        recargar=Registro(num-0.1,datetime.date.today(),150)
+        self.persona.recargar(recargar)
+        self.assertEqual(self.persona.regRecarga[-1], recargar,"Error en la recarga")
+    
+    def testMaliciaRecarga(self):
+        recargar=Registro(-1 ,datetime.date.today(),150)
+        try:
+            self.persona.recargar(recargar)
+        except:
+            print("No paso la prueba , se acepto una recarga negativa")
         
-   
+    
+    
+        
         
     
     

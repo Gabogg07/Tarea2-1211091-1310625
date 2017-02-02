@@ -43,7 +43,7 @@ class BilleteraElectronica:
     
     def recargar(self, registro):
         if (registro.monto < 0):
-            return "La recarga debe ser positiva"
+            print("El monto debe de ser positivo")
         self.regRecarga.append(registro)
         self.saldoTotal+= registro.monto
 
