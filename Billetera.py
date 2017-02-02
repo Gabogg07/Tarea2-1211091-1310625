@@ -33,3 +33,5 @@ class BilleteraElectronica:
         self.regRecarga.append(registro)
         self.saldoTotal+= registro.monto
 
+    def consumir(self, consumo):
+        pass
