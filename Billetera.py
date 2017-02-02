@@ -21,4 +21,5 @@ class BilleteraElectronica(object):
         self.regConsumo = []
         self.saldoTotal = 0
         
-    
+    def saldo(self):
+        pass

@@ -11,17 +11,17 @@ from Billetera import *
 class Test(unittest.TestCase):
 
     def setUp(self):
-        persona=BilleteraElectronica("Gabriel","Gutierrez",24723958,192,987654321)
+        self.persona=BilleteraElectronica("Gabriel","Gutierrez",24723958,192,987654321)
         
     def testBilletera(self):
-        self.assertEqual(persona.Nombre, "Gabriel", "Error en el nombre")
-        self.assertEqual(persona.Apellido, "Gutierrez", "Error en el apellido")
-        self.assertEqual(persona.Cedula,24723958,"Error en la cedula")
-        self.assertEqual(persona.PIN, 192, "Error en el pin")
-        self.assertEqual(persona.id, 987654321, "Error en el identificador")
+        self.assertEqual(self.persona.Nombre, "Gabriel", "Error en el nombre")
+        self.assertEqual(self.persona.Apellido, "Gutierrez", "Error en el apellido")
+        self.assertEqual(self.persona.Cedula,24723958,"Error en la cedula")
+        self.assertEqual(self.persona.PIN, 192, "Error en el pin")
+        self.assertEqual(self.persona.id, 987654321, "Error en el identificador")
     
     def testSaldo(self):
-        self.assertEqual(persona.saldo, 0, "Error al ver el saldo disponible")
+        self.assertEqual(self.persona.saldo, 0, "Error al ver el saldo disponible")
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
