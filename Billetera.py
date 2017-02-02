@@ -34,4 +34,5 @@ class BilleteraElectronica:
         self.saldoTotal+= registro.monto
 
     def consumir(self, consumo):
-        pass
+        self.regConsumo.append(consumo)
+        self.saldoTotal = self.saldoTotal - consumo.monto        
