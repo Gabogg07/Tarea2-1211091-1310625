@@ -5,6 +5,7 @@ Created on Feb 1, 2017
 @author: ale
 '''
 import unittest
+import datetime
 from Billetera import *
 
 
@@ -22,6 +23,11 @@ class Test(unittest.TestCase):
     
     def testSaldo(self):
         self.assertEqual(self.persona.saldo(), 0, "Error al ver el saldo disponible")
+        
+    def testRecargar(self):
+        Registro = (1000, datetime.datetime.today(),150)
+        self.persona.recargar(Registro)
+        self.assertEqual(self.persona.regRecarga[-1], Registro, "Error en la recarga.")
 
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
