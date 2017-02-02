@@ -38,7 +38,8 @@ class Test(unittest.TestCase):
         self.persona.consumir(consumo, 192)
         self.assertEqual(self.persona.regConsumo[-1], consumo, "Error en el consumo")
         
-    
+   
+        
     
     
 if __name__ == "__main__":
